@@ -2,10 +2,13 @@ import random
 import matplotlib.pyplot as plt
 import difflib
 import statistics
+import numpy as np
 
 
 def print_menu():
+    """Display the main menu options to the user."""
     print("\nMenu:")
+    print("0. Exit")
     print("1. List movies")
     print("2. Add movie")
     print("3. Delete movie")
@@ -17,49 +20,104 @@ def print_menu():
     print("9. Create rating histogram")
 
 
-
-def get_valid_rating(prompt="Enter rating (0.0–10.0): "):
+def get_valid_rating(prompt="Enter rating (0–10): "):
+    """Prompt the user for a valid numeric movie rating between 0 and 10."""
     while True:
         try:
             rating = float(input(prompt))
-            if 0.0 <= rating <= 10.0:
+            if 0 <= rating <= 10:
                 return rating
-            print("Rating must be between 0.0 and 10.0")
+            print("Rating must be between 0 and 10.")
         except ValueError:
             print("Please enter a valid number.")
 
 
 def list_movies(movies):
+    """Print all movies with their ratings."""
+    if not movies:
+        print("No movies in database.")
+        return
+
     for movie, rating in movies.items():
         print(f"{movie}: {rating}")
 
 
 def add_movie(movies):
-    movie = input("Enter movie name: ")
+    """Add a new movie and its rating to the database."""
+    movie = input("Enter movie name: ").strip()
+    lower_movies = {m.lower(): m for m in movies}
+
+    if movie.lower() in lower_movies:
+        print("Movie already exists. Use update instead.")
+        return
+
     rating = get_valid_rating()
     movies[movie] = rating
     print("Movie added.")
 
 
 def delete_movie(movies):
-    movie = input("Enter movie to delete: ")
-    if movie in movies:
-        del movies[movie]
-        print("Movie deleted.")
+    """
+    Ask the user for a movie name and delete it.
+    If the movie does not exist, print an error message.
+    """
+    if not movies:
+        print("No movies in database.")
+        return
+
+    movie = input("Enter movie to delete: ").strip()
+    lower_movies = {m.lower(): m for m in movies}
+
+    if movie.lower() not in lower_movies:
+        print(f'Error: "{movie}" not found in the database.')
+
+        return
+
+    real_name = lower_movies[movie.lower()]
+    del movies[real_name]
+    print(f'Movie "{real_name}" deleted successfully.')
+
+
+def update_movie(movies):
+    """Update the rating of an existing movie."""
+    if not movies:
+        print("No movies in database.")
+        return
+
+    movie = input("Enter movie to update: ").strip()
+    lower_movies = {m.lower(): m for m in movies}
+
+    if movie.lower() in lower_movies:
+        real_name = lower_movies[movie.lower()]
+        movies[real_name] = get_valid_rating("Enter new rating (0–10): ")
+        print("Movie updated.")
     else:
         print("Movie not found.")
 
 
 def update_movie(movies):
-    movie = input("Enter movie to update: ")
-    if movie in movies:
-        movies[movie] = get_valid_rating("Enter new rating (0–10): ")
+    """Update the rating of an existing movie."""
+    if not movies:
+        print("No movies in database.")
+        return
+
+    movie = input("Enter movie to update: ").strip()
+    lower_movies = {m.lower(): m for m in movies}
+
+    if movie.lower() in lower_movies:
+        real_name = lower_movies[movie.lower()]
+        movies[real_name] = get_valid_rating("Enter new rating (0–10): ")
         print("Movie updated.")
     else:
         print("Movie not found.")
 
 
 def show_stats(movies):
+    """Display average, median, best, and worst movie ratings."""
+    if not movies:
+        print("No movies in database.")
+        return
+
     ratings = list(movies.values())
 
     avg = statistics.mean(ratings)
@@ -75,54 +133,91 @@ def show_stats(movies):
 
 
 def random_movie(movies):
+    """Select and display a random movie from the database."""
+    if not movies:
+        print("No movies in database.")
+        return
+
     movie = random.choice(list(movies.keys()))
     print(f"{movie}: {movies[movie]}")
 
 
 def search_movie(movies):
-    query = input("Enter part of movie name: ").lower()
-
-    matches = [
-        movie for movie in movies
-        if query in movie.lower()
-    ]
-
-    if matches:
-        print("Matches found:")
-        for movie in matches:
-            print(f"{movie}: {movies[movie]}")
+    """
+    Search for movies using case-insensitive partial matching.
+    Falls back to fuzzy matching if no partial matches are found.
+    """
+    if not movies:
+        print("No movies in database.")
         return
 
-    close_matches = difflib.get_close_matches(
-        query, movies.keys(), n=5, cutoff=0.5
+    search = input("Enter part of movie name: ").strip().lower()
+
+    # Case-insensitive partial matching
+    matches = {
+        movie: rating
+        for movie, rating in movies.items()
+        if search in movie.lower()
+    }
+
+    if matches:
+        for movie, rating in matches.items():
+            print(f"{movie}: {rating}")
+        return
+
+    # Fuzzy matching fallback
+    fuzzy_matches = difflib.get_close_matches(
+        search, movies.keys(), n=5, cutoff=0.4
     )
 
-    if close_matches:
-        print("Did you mean:")
-        for movie in close_matches:
+    if fuzzy_matches:
+        print(f'The movie "{search}" does not exist. Did you mean:')
+        for movie in fuzzy_matches:
             print(movie)
     else:
-        print("No matching movies found.")
+        print(f'The movie "{search}" does not exist. No suggestions found.')
 
 
 def sort_movies(movies):
+    """Print movies sorted by rating in descending order."""
+    if not movies:
+        print("No movies in database.")
+        return
+
     sorted_movies = sorted(
         movies.items(), key=lambda item: item[1], reverse=True
     )
+
     for movie, rating in sorted_movies:
         print(f"{movie}: {rating}")
 
 
 def create_histogram(movies):
-    filename = input("Enter filename (e.g. ratings.png): ")
+    """Create and save a histogram of movie ratings."""
+    filename = input("Enter filename to save histogram (e.g. ratings.png): ")
     ratings = list(movies.values())
     colors = ["skyblue", "green", "orange", "purple", "red", "gold"]
 
     plt.figure()
-    plt.hist(ratings, bins=10, edgecolor="black")
+
+    # Float bins from 0 to 10 with step 1.0
+    bins = np.arange(0, 11, 1)
+
+    plt.hist(
+        ratings,
+        bins=bins,
+        color=random.choice(colors),
+        edgecolor="black",
+        alpha=0.8
+    )
+
     plt.title("Movie Ratings Histogram")
     plt.xlabel("Rating")
     plt.ylabel("Number of Movies")
+
+    plt.xticks(bins)
+    plt.yticks(range(0, len(ratings) + 1))
+
     plt.grid(axis="y", alpha=0.5)
     plt.savefig(filename)
     plt.close()
@@ -131,6 +226,7 @@ def create_histogram(movies):
 
 
 def main():
+    """Run the movie database application."""
     print(f"{'My Movies Database':*^50}")
 
     movies = {
@@ -148,9 +244,12 @@ def main():
 
     while True:
         print_menu()
-        choice = input("Enter choice (1–10): ")
+        choice = input("Enter choice (0–9): ")
 
-        if choice == "1":
+        if choice == "0":
+            print("Goodbye!")
+            break
+        elif choice == "1":
             list_movies(movies)
         elif choice == "2":
             add_movie(movies)
@@ -163,35 +262,13 @@ def main():
         elif choice == "6":
             random_movie(movies)
         elif choice == "7":
-            """
-                   Search for a movie using exact or fuzzy matching.
-                   Provides suggestions if an exact match is not found.
-
-                   Reference implementation (for documentation only):
-
-                       search = input("Enter part of movie name: ")
-            """
-            if search in movies:
-                print(f"{search}: {movies[search]}")
-            else:
-                matches = difflib.get_close_matches(
-                search, movies.keys(), n=5, cutoff=0.5
-                )
-
-                if matches:
-                    print(f'The movie "{search}" does not exist. Did you mean:')
-                    for match in matches:
-                            print(match)
-                    else:
-                        print(f'The movie "{search}" does not exist. ' 'No suggestions found.' )
-                        search_movie(movies)
-                elif choice == "8":
-                    sort_movies(movies)
-                elif choice == "9":
-                    create_histogram(movies)
-
-                else:
-                    print("Invalid choice.")
+            search_movie(movies)
+        elif choice == "8":
+            sort_movies(movies)
+        elif choice == "9":
+            create_histogram(movies)
+        else:
+            print("Invalid choice.")
 
 
 if __name__ == "__main__":
