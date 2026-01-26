@@ -1,15 +1,3 @@
-#Updated Code (1–5 implemented)
-# What’s been added
-
-#1. Safe handling for empty movie database
-
-#2. case-insensitive movie handling (add / delete / update / search)
-
-# 3. Protection against accidental overwrites
-
-# 4. Improved histogram bin handling
-# 5. Exit option in the menu
-
 import random
 import matplotlib.pyplot as plt
 import difflib
@@ -57,7 +45,6 @@ def list_movies(movies):
 def add_movie(movies):
     """Add a new movie and its rating to the database."""
     movie = input("Enter movie name: ").strip()
-
     lower_movies = {m.lower(): m for m in movies}
 
     if movie.lower() in lower_movies:
@@ -70,7 +57,10 @@ def add_movie(movies):
 
 
 def delete_movie(movies):
-    """Delete a movie from the database if it exists."""
+    """
+    Ask the user for a movie name and delete it.
+    If the movie does not exist, print an error message.
+    """
     if not movies:
         print("No movies in database.")
         return
@@ -78,10 +68,29 @@ def delete_movie(movies):
     movie = input("Enter movie to delete: ").strip()
     lower_movies = {m.lower(): m for m in movies}
 
+    if movie.lower() not in lower_movies:
+        print(f'Error: "{movie}" not found in the database.')
+
+        return
+
+    real_name = lower_movies[movie.lower()]
+    del movies[real_name]
+    print(f'Movie "{real_name}" deleted successfully.')
+
+
+def update_movie(movies):
+    """Update the rating of an existing movie."""
+    if not movies:
+        print("No movies in database.")
+        return
+
+    movie = input("Enter movie to update: ").strip()
+    lower_movies = {m.lower(): m for m in movies}
+
     if movie.lower() in lower_movies:
         real_name = lower_movies[movie.lower()]
-        del movies[real_name]
-        print("Movie deleted.")
+        movies[real_name] = get_valid_rating("Enter new rating (0–10): ")
+        print("Movie updated.")
     else:
         print("Movie not found.")
 
@@ -135,30 +144,35 @@ def random_movie(movies):
 
 def search_movie(movies):
     """
-    Search for a movie using exact or fuzzy matching.
-    Provides suggestions if an exact match is not found.
+    Search for movies using case-insensitive partial matching.
+    Falls back to fuzzy matching if no partial matches are found.
     """
     if not movies:
         print("No movies in database.")
         return
 
-    search = input("Enter part of movie name: ").strip()
-    lower_movies = {m.lower(): m for m in movies}
+    search = input("Enter part of movie name: ").strip().lower()
 
-    # Exact (case-insensitive) match
-    if search.lower() in lower_movies:
-        real_name = lower_movies[search.lower()]
-        print(f"{real_name}: {movies[real_name]}")
+    # Case-insensitive partial matching
+    matches = {
+        movie: rating
+        for movie, rating in movies.items()
+        if search in movie.lower()
+    }
+
+    if matches:
+        for movie, rating in matches.items():
+            print(f"{movie}: {rating}")
         return
 
-    # Fuzzy matching
-    matches = difflib.get_close_matches(
+    # Fuzzy matching fallback
+    fuzzy_matches = difflib.get_close_matches(
         search, movies.keys(), n=5, cutoff=0.4
     )
 
-    if matches:
+    if fuzzy_matches:
         print(f'The movie "{search}" does not exist. Did you mean:')
-        for movie in matches:
+        for movie in fuzzy_matches:
             print(movie)
     else:
         print(f'The movie "{search}" does not exist. No suggestions found.')
@@ -180,21 +194,19 @@ def sort_movies(movies):
 
 def create_histogram(movies):
     """Create and save a histogram of movie ratings."""
-    if not movies:
-        print("No movies in database.")
-        return
-
     filename = input("Enter filename to save histogram (e.g. ratings.png): ")
     ratings = list(movies.values())
+    colors = ["skyblue", "green", "orange", "purple", "red", "gold"]
 
     plt.figure()
 
-    # Improved float bins (0–10 in 0.5 steps)
-    bins = np.arange(0, 10.5, 0.5)
+    # Float bins from 0 to 10 with step 1.0
+    bins = np.arange(0, 11, 1)
 
     plt.hist(
         ratings,
         bins=bins,
+        color=random.choice(colors),
         edgecolor="black",
         alpha=0.8
     )
@@ -203,7 +215,9 @@ def create_histogram(movies):
     plt.xlabel("Rating")
     plt.ylabel("Number of Movies")
 
-    plt.xticks(np.arange(0, 11, 1))
+    plt.xticks(bins)
+    plt.yticks(range(0, len(ratings) + 1))
+
     plt.grid(axis="y", alpha=0.5)
     plt.savefig(filename)
     plt.close()
@@ -259,51 +273,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-    print(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::")
-
-
-# Optional Feature Roadmap
-#  Optional 1 — Save & Load Movies (JSON) ← START HERE
-#
-# Movies persist between program runs
-#
-# Introduces basic file handling
-#
-# Very “professional” upgrade
-#
-# Optional 2 — Top 3 / Bottom 3 Movies
-#
-# Quick stats enhancement
-#
-# No new libraries
-#
-# Optional 3 — Multiple Ratings per Movie
-#
-# Store lists instead of single numbers
-#
-# Ratings average automatically
-#
-# Optional 4 — Extended Movie Info
-#
-# Year, genre, director
-#
-# Nested dictionaries
-#
-# Optional 5 — Visual Enhancements
-#
-# Show histogram on screen
-#
-# Bar chart of top movies
-#
-# Optional Feature 1: Save & Load Movies (JSON)
-# What this adds
-#
-# Movies are loaded on startup
-#
-# Movies are saved automatically on exit
-#
-# No change to user workflow
-
-

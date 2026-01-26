@@ -1,5 +1,253 @@
+database = [
+    {"country": "USA", "cities": ["New York", "Los Angeles", "Chicago"]},
+    {"country": "India", "cities": ["Delhi", "Mumbai", "Bangalore"]},
+    {"country": "Japan", "cities": ["Tokyo", "Osaka", "Kyoto"]}
+]
+######################Core Operations (for small projects & learning)############################
+# Get cities
+def get_cities(country):
+    for record in database:
+        if record["country"].lower() == country.lower():
+            return record["cities"]
+    return []
+
+
+
+
+# Add country
+def add_country(country):
+    database.append({"country": country, "cities": []})
+
+
+# Add city
+    def add_city(country, city):
+        for record in database:
+            if record["country"].lower() == country.lower():
+                record["cities"].append(city)
+                return
+
+# Remove city
+
+def remove_city(country, city):
+    for record in database:
+        if record["country"].lower() == country.lower():
+            if city in record["cities"]:
+                record["cities"].remove(city)
+
+
+
+print("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::")
+
+countries = [
+    {"id": 1, "name": "USA"},
+    {"id": 2, "name": "India"},
+    {"id": 3, "name": "Japan"}
+]
+
+cities = [
+    {"name": "New York", "country_id": 1},
+    {"name": "Los Angeles", "country_id": 1},
+    {"name": "Chicago", "country_id": 1},
+    {"name": "Delhi", "country_id": 2},
+    {"name": "Mumbai", "country_id": 2},
+    {"name": "Tokyo", "country_id": 3}
+]
+
+
+
+
+
+   # """
+   #Suitable for:
+    # Small projects
+    # Learning data structures
+    # Scripts & prototypes
+
+ 
+
+
+
+countries = [
+    {"id": 1, "name": "USA"},
+    {"id": 2, "name": "India"},
+    {"id": 3, "name": "Japan"}
+]
+
+cities = [
+    {"name": "New York", "country_id": 1},
+    {"name": "Los Angeles", "country_id": 1},
+    {"name": "Chicago", "country_id": 1},
+    {"name": "Delhi", "country_id": 2},
+    {"name": "Mumbai", "country_id": 2},
+    {"name": "Tokyo", "country_id": 3}
+]
+
+def get_cities_by_country(country_name):
+    for country in countries:   # ✅ correct variable name
+        if country["name"].lower() == country_name.lower():
+            country_id = country["id"]
+            break
+    else:
+        return "Country not found"
+
+    return [city["name"] for city in cities if city["country_id"] == country_id]
+
+
+print(get_cities_by_country("USA"))
+
+
+
+print(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::..................................")
+import socket
+import threading
+import wikipedia
 import random
 
+# -----------------------------
+# List-based "database"
+# -----------------------------
+
+countries = [
+    {"id": 1, "name": "USA"},
+    {"id": 2, "name": "India"},
+    {"id": 3, "name": "Japan"}
+]
+
+cities = [
+    {"name": "New York", "country_id": 1},
+    {"name": "Los Angeles", "country_id": 1},
+    {"name": "Chicago", "country_id": 1},
+    {"name": "Delhi", "country_id": 2},
+    {"name": "Mumbai", "country_id": 2},
+    {"name": "Tokyo", "country_id": 3}
+]
+
+# -----------------------------
+# Function
+# -----------------------------
+
+def get_cities_by_country(country_name):
+    country_id = None
+
+    for country in countries:
+        if country["name"].lower() == country_name.lower():
+            country_id = country["id"]
+            break
+
+    if country_id is None:
+        return "Country not found"
+
+    return [city["name"] for city in cities if city["country_id"] == country_id]
+
+
+# -----------------------------
+# Main
+# -----------------------------
+
+def main():
+    """
+    Main function to start the online gaming service.
+    """
+    print("Starting online gaming service...")
+    result = get_cities_by_country("USA")
+    print("Cities in USA:", result)
+
+
+if __name__ == "__main__":
+    main()
+
+
+print("::::::::::::::::::::::::::::::::")
+import socket
+import threading
+import wikipedia
+import random
+
+# =====================================================
+# In-memory list "database"
+# Suitable for:
+# ✅ Small projects
+# ✅ Learning data structures
+# ❌ Large datasets
+# ❌ Multi-user applications
+# =====================================================
+
+COUNTRIES = [
+    {"id": 1, "name": "USA"},
+    {"id": 2, "name": "India"},
+    {"id": 3, "name": "Japan"}
+]
+
+CITIES = [
+    {"name": "New York", "country_id": 1},
+    {"name": "Los Angeles", "country_id": 1},
+    {"name": "Chicago", "country_id": 1},
+    {"name": "Delhi", "country_id": 2},
+    {"name": "Mumbai", "country_id": 2},
+    {"name": "Tokyo", "country_id": 3}
+]
+
+# =====================================================
+# Core Logic
+# =====================================================
+
+def get_country_id(country_name):
+    """Return country ID or None (O(n) search)."""
+    for country in COUNTRIES:
+        if country["name"].lower() == country_name.lower():
+            return country["id"]
+    return None
+
+
+def get_cities_by_country(country_name):
+    """
+    Get all cities for a given country.
+    ❌ Not optimized for large datasets
+    ❌ Not thread-safe
+    """
+    if not country_name:
+        return "Invalid country name"
+
+    country_id = get_country_id(country_name)
+
+    if country_id is None:
+        return "Country not found"
+
+    return [city["name"] for city in CITIES if city["country_id"] == country_id]
+
+
+def get_random_city(country_name):
+    """Return a random city from a country."""
+    cities = get_cities_by_country(country_name)
+
+    if isinstance(cities, str):
+        return cities
+
+    return random.choice(cities) if cities else "No cities available"
+
+
+# =====================================================
+# Main Application (Prototype)
+# =====================================================
+
+def main():
+    print("Starting online gaming service (prototype)...")
+
+    country = "USA"
+
+    cities = get_cities_by_country(country)
+    print(f"Cities in {country}: {cities}")
+
+    random_city = get_random_city(country)
+    print(f"Random city in {country}: {random_city}")
+
+
+if __name__ == "__main__":
+    main()
+
+    print(":::::::::....................................................................................................")
+
+import random
 
 # =====================================================
 # In-MEMORY DATA (List-Based Database)
@@ -126,7 +374,6 @@ def normalize(text):
 
 
 def country_exists(country_name):
-    wikipedia.summary(country_name)
     for country in COUNTRIES:
         if normalize(country["name"]) == normalize(country_name):
             return country
@@ -136,44 +383,7 @@ def country_exists(country_name):
 
 def ask_capital_question(player, country):
     ...
-def get_country_data(name):
-    """
-    Returns:
-    {
-        name,
-        capital,
-        lat,
-        lng,
-        population
-    }
-    """
-    import requests
 
-    def get_country_data(name):
-        url = f"https://restcountries.com/v3.1/name/{name}"
-        r = requests.get(url)
-        if r.status_code != 200:
-            return None
-
-        data = r.json()[0]
-        return {
-            "name": data["name"]["common"],
-            "capital": data["capital"][0],
-            "lat": data["latlng"][0],
-            "lng": data["latlng"][1],
-            "population": data["population"]
-        }
-
-
-def save_game_state(state):
-    with open("game.json", "w") as f:
-        json.dump(state, f, indent=4)
-
-def load_game_state():
-    if not os.path.exists("game.json"):
-        return {}
-    with open("game.json") as f:
-        return json.load(f)
 def get_next_country_id():
     return len(COUNTRIES) + 1
 
@@ -293,7 +503,7 @@ if __name__ == "__main__":
 #Extendable
 
 #You can update and replace:
-#make it to become a game connected to the map
+# make it to become a game connected to the map
 
 #Lists → JSON / DB
 
