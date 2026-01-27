@@ -1,0 +1,17 @@
+[
+  {
+    "name": "List of cities in Germany by population",
+    "country_id": 1,
+    "summary": "No information available."
+  },
+  {
+    "name": "List of cities and towns in Germany",
+    "country_id": 1,
+    "summary": "This is a complete list of the 2,056 cities and towns in Germany (as of 1 January 2024)."
+  },
+  {
+    "name": "List of German cities by GDP",
+    "country_id": 1,
+    "summary": "The following article sorts the 107 urban districts (Kreisfreie Städte — cities that constitute districts in their own right) and the metropolitan districts of Hanover, Aachen, and Saarbrücken by their gross domestic product (GDP) in the year 2021."
+  }
+]
