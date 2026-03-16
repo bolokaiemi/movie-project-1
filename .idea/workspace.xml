@@ -5,8 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="221eee39-5569-4adc-ac21-f413383a182d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/movieo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie4.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie4.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie4case.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie4case.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie5.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie5.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie6.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie6.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie_storage.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie_storage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/moviepart2.py" beforeDir="false" afterPath="$PROJECT_DIR$/moviepart2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/moviept2.py" beforeDir="false" afterPath="$PROJECT_DIR$/moviept2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/moviept3.py" beforeDir="false" afterPath="$PROJECT_DIR$/moviept3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/updatedecimal.py" beforeDir="false" afterPath="$PROJECT_DIR$/updatedecimal.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +59,7 @@
     &quot;Python.TestV.executor&quot;: &quot;Run&quot;,
     &quot;Python.app.executor&quot;: &quot;Run&quot;,
     &quot;Python.countrycity.executor&quot;: &quot;Run&quot;,
+    &quot;Python.database.executor&quot;: &quot;Run&quot;,
     &quot;Python.game 4.executor&quot;: &quot;Run&quot;,
     &quot;Python.game.executor&quot;: &quot;Run&quot;,
     &quot;Python.game2.executor&quot;: &quot;Run&quot;,
@@ -58,12 +69,23 @@
     &quot;Python.mapcountrycitygame.executor&quot;: &quot;Run&quot;,
     &quot;Python.mocvie3.executor&quot;: &quot;Run&quot;,
     &quot;Python.movie.executor&quot;: &quot;Run&quot;,
+    &quot;Python.movie12.executor&quot;: &quot;Run&quot;,
     &quot;Python.movie2.executor&quot;: &quot;Run&quot;,
     &quot;Python.movie4.executor&quot;: &quot;Run&quot;,
+    &quot;Python.movie4case.executor&quot;: &quot;Run&quot;,
+    &quot;Python.movie5.executor&quot;: &quot;Run&quot;,
+    &quot;Python.movie6.executor&quot;: &quot;Run&quot;,
+    &quot;Python.movie_storage.executor&quot;: &quot;Run&quot;,
     &quot;Python.moviecodio.executor&quot;: &quot;Run&quot;,
     &quot;Python.moviecodio2.executor&quot;: &quot;Run&quot;,
     &quot;Python.moviefinal.executor&quot;: &quot;Run&quot;,
+    &quot;Python.movieo.executor&quot;: &quot;Run&quot;,
+    &quot;Python.moviepart2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.moviept2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.moviept3.executor&quot;: &quot;Run&quot;,
+    &quot;Python.myset.executor&quot;: &quot;Run&quot;,
     &quot;Python.sentencwiki.executor&quot;: &quot;Run&quot;,
+    &quot;Python.updatedecimal.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
@@ -99,7 +121,32 @@
       <workItem from="1769241374805" duration="15380000" />
       <workItem from="1769326040509" duration="5000" />
       <workItem from="1769415133694" duration="1286000" />
-      <workItem from="1769417668446" duration="1625000" />
+      <workItem from="1769417668446" duration="2605000" />
+      <workItem from="1769421125554" duration="9000" />
+      <workItem from="1769505018545" duration="5287000" />
+      <workItem from="1769512698172" duration="20000" />
+      <workItem from="1769512822700" duration="104000" />
+      <workItem from="1769513011113" duration="118000" />
+      <workItem from="1769513207329" duration="47000" />
+      <workItem from="1769513306318" duration="17000" />
+      <workItem from="1769513340031" duration="130000" />
+      <workItem from="1769513517948" duration="50000" />
+      <workItem from="1769513606533" duration="37000" />
+      <workItem from="1769514128735" duration="621000" />
+      <workItem from="1769517006092" duration="52000" />
+      <workItem from="1769517129933" duration="1530000" />
+      <workItem from="1769519030424" duration="1910000" />
+      <workItem from="1769524117390" duration="29000" />
+      <workItem from="1770924037800" duration="10000" />
+      <workItem from="1770924092163" duration="23000" />
+      <workItem from="1772317152884" duration="30256000" />
+      <workItem from="1772469203237" duration="7000" />
+      <workItem from="1772521829878" duration="15000" />
+      <workItem from="1772528445156" duration="11000" />
+      <workItem from="1772615753703" duration="604000" />
+      <workItem from="1772636564485" duration="75000" />
+      <workItem from="1772653377730" duration="203000" />
+      <workItem from="1773688266379" duration="1546000" />
     </task>
     <servers />
   </component>
@@ -107,23 +154,37 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/servicesProject$moviefinal.coverage" NAME="moviefinal Coverage Results" MODIFIED="1769325219778" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/servicesProject$moviefinal.coverage" NAME="moviefinal Coverage Results" MODIFIED="1769512444684" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/servicesProject$countrycity.coverage" NAME="countrycity Coverage Results" MODIFIED="1769282469988" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/servicesProject$game3.coverage" NAME="game3 Coverage Results" MODIFIED="1769186733291" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/servicesProject$game3.coverage" NAME="game3 Coverage Results" MODIFIED="1769512831580" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/servicesProject$learncitycountry.coverage" NAME="learncitycountry Coverage Results" MODIFIED="1769517019770" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/movieProject$moviept3.coverage" NAME="moviept3 Coverage Results" MODIFIED="1772343312835" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/movieProject$myset.coverage" NAME="myset Coverage Results" MODIFIED="1772462308950" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/servicesProject$TestV.coverage" NAME="TestV Coverage Results" MODIFIED="1769324192876" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/movieProject$movie5.coverage" NAME="movie5 Coverage Results" MODIFIED="1772405376933" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/movieProject$moviefinal.coverage" NAME="moviefinal Coverage Results" MODIFIED="1772615800319" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/movieProject$movie6.coverage" NAME="movie6 Coverage Results" MODIFIED="1772450631819" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/servicesProject$app.coverage" NAME="app Coverage Results" MODIFIED="1769288591335" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/movieProject$database.coverage" NAME="database Coverage Results" MODIFIED="1772345574418" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/servicesProject$movie2.coverage" NAME="movie2 Coverage Results" MODIFIED="1769182603449" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/servicesProject$learncitycountry.coverage" NAME="learncitycountry Coverage Results" MODIFIED="1769282419430" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/servicesProject$game2.coverage" NAME="game2 Coverage Results" MODIFIED="1769186249405" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/servicesProject$movie.coverage" NAME="movie Coverage Results" MODIFIED="1769419085503" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/servicesProject$sentencwiki.coverage" NAME="sentencwiki Coverage Results" MODIFIED="1769183008536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/movieProject$movieo.coverage" NAME="movieo Coverage Results" MODIFIED="1772399240714" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/movieProject$moviepart2.coverage" NAME="moviepart2 Coverage Results" MODIFIED="1772319811225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/servicesProject$movie.coverage" NAME="movie Coverage Results" MODIFIED="1769512328728" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/servicesProject$game2.coverage" NAME="game2 Coverage Results" MODIFIED="1769512575837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/servicesProject$sentencwiki.coverage" NAME="sentencwiki Coverage Results" MODIFIED="1769513541169" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/movieProject$updatedecimal.coverage" NAME="updatedecimal Coverage Results" MODIFIED="1772352361026" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/movieProject$movie4.coverage" NAME="movie4 Coverage Results" MODIFIED="1772399749991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/servicesProject$game_4.coverage" NAME="game 4 Coverage Results" MODIFIED="1769187428757" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/servicesProject$moviecodio.coverage" NAME="moviecodio Coverage Results" MODIFIED="1769152371901" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/servicesProject$TestV.coverage" NAME="TestV Coverage Results" MODIFIED="1769324192876" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/movieProject$moviept2.coverage" NAME="moviept2 Coverage Results" MODIFIED="1772341525089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/servicesProject$moviecodio2.coverage" NAME="moviecodio2 Coverage Results" MODIFIED="1769155364746" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/servicesProject$gamemap.coverage" NAME="gamemap Coverage Results" MODIFIED="1769288486263" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/servicesProject$gamemap.coverage" NAME="gamemap Coverage Results" MODIFIED="1769513028183" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/servicesProject$movie4.coverage" NAME="movie4 Coverage Results" MODIFIED="1769286852286" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/servicesProject$mapcountrycitygame.coverage" NAME="mapcountrycitygame Coverage Results" MODIFIED="1769316690284" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/servicesProject$mapcountrycitygame.coverage" NAME="mapcountrycitygame Coverage Results" MODIFIED="1769517158263" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/servicesProject$game.coverage" NAME="game Coverage Results" MODIFIED="1769185818353" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/servicesProject$mocvie3.coverage" NAME="mocvie3 Coverage Results" MODIFIED="1769319716208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/servicesProject$mocvie3.coverage" NAME="mocvie3 Coverage Results" MODIFIED="1769523621602" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/servicesProject$movie12.coverage" NAME="movie12 Coverage Results" MODIFIED="1769419573450" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/movieProject$movie4case.coverage" NAME="movie4case Coverage Results" MODIFIED="1772435640788" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/movieProject$movie_storage.coverage" NAME="movie_storage Coverage Results" MODIFIED="1772346224074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
